@@ -25,14 +25,18 @@ const TotalGoodsPrice: FC<TotalGoodsPriceType> = ({
                 tag="span"
                 variant="M"
             >
-                {`${!!totalDiscountPrice ? totalDiscountPrice : totalPrice} ₴`}
+                {`${
+                    !!totalDiscountPrice
+                        ? totalDiscountPrice.toFixed(2)
+                        : totalPrice.toFixed(2)
+                } ₴`}
             </Typography>
             {!!totalDiscountPrice && (
                 <Typography
                     tag="span"
                     className="line-through text-right text-myGrey-mid max-md:text-[14px] max-[425px]:text-[12px]"
                 >
-                    {`${totalPrice} ₴`}
+                    {`${totalPrice.toFixed(2)} ₴`}
                 </Typography>
             )}
         </div>
