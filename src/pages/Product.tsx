@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import RatingWrapper from "../components/goods/RatingWrapper.js";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import DiscountList from "../components/productPage/GoodsList/DiscountList.js";

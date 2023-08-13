@@ -23,7 +23,7 @@ export const useCreateOrder = ({ reset }: PropsType) => {
     const notify = () => toast.success("Замовлення створилось");
     const { handlerOpenOrderDoneModal } = useOrderModalControl();
     const { error, isLoading, mutate } = useMutation(createUserOrder, {
-        onSuccess: (data) => {
+        onSuccess: () => {
             queryClient.invalidateQueries(["orders"]);
             notify();
             reset({

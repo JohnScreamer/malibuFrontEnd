@@ -77,7 +77,7 @@ export const getProductRating = (
     return instance
         .get(`/api/ratings/reviews/${encodeURIComponent(productName)}/stats`)
         .then((data) => data.data)
-        .catch((e) => ({ averageScore: 0, reviewsCount: 0 }));
+        .catch(() => ({ averageScore: 0, reviewsCount: 0 }));
 };
 
 export const getProductReviews = (productName: string): Promise<ReviewBody> => {

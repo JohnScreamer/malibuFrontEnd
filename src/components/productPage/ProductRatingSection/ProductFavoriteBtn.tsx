@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useFavoriteControl } from "../../../hooks/useFavoriteControl.js";
 import { ProductData } from "../../../types/pages/homePage.type.js";
 import Button from "../../uikit/buttons/Button.js";

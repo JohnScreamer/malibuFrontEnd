@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import Button from "../../uikit/buttons/Button.js";
 import Rating from "../../uikit/rating/Rating.js";
 import CardWrapper from "./CardWrapper.js";
-import GoodsImageSection from "./GoodsImageSection.js";
 import GoodsName from "../GoodsName.js";
 import PriceSection, { PriceTag, PriceTagSecondary } from "../PriceSection.js";
 
@@ -20,14 +19,7 @@ const CardExample: FC = () => {
                     В корзину
                 </Button>
             }
-            imgSection={
-                <GoodsImageSection
-                    goodsAmount={2}
-                    imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
-                    productId={0}
-                    data={undefined}
-                />
-            }
+            imgSection={<div></div>}
             goodsName={<GoodsName>Jennie kim</GoodsName>}
             priceSection={
                 <PriceSection

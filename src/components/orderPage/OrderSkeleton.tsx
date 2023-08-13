@@ -8,7 +8,7 @@ const OrderSkeleton: FC<OrderSkeletonType> = () => {
         <div className="w-full h-full flex flex-col gap-4">
             {Array(3)
                 .fill(null)
-                .map((el, i) => (
+                .map((_, i) => (
                     <Skeleton className="w-full h-[400px]" key={i} />
                 ))}
         </div>

@@ -35,7 +35,6 @@ Span.args = {
 export const CustomStyle = Template.bind({});
 CustomStyle.args = {
     children: "Custom Style",
-    sx: "text-red font-semibold",
 };
 
 export const VariantXS = Template.bind({});
@@ -53,5 +52,4 @@ VariantXL.args = {
 export const FontBold = Template.bind({});
 FontBold.args = {
     children: "Font Bold",
-    fb: true,
 };

@@ -68,10 +68,10 @@ const Field: FC<FieldType> = (props) => {
         if (inputRef.current) {
             const { selectionStart, selectionEnd } = inputRef.current;
             if (selectionStart !== null && selectionEnd !== null) {
-                const selectedText = inputRef.current.value.substring(
-                    selectionStart,
-                    selectionEnd
-                );
+                // const selectedText = inputRef.current.value.substring(
+                //     selectionStart,
+                //     selectionEnd
+                // );
             }
         }
     };

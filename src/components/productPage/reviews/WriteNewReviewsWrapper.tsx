@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import Typography from "../../typography/Typography.js";
 import Button from "../../uikit/buttons/Button.js";
@@ -34,11 +34,8 @@ const WriteNewReviewsWrapper: FC<WriteNewReviewsWrapperType> = ({
         //@ts-ignore
         resolver: yupResolver(REVIEW_VALIDATION),
     });
-    const {
-        isLoading: createLoading,
-        error,
-        createReview,
-    } = useCreateReview(productName);
+    const { isLoading: createLoading, createReview } =
+        useCreateReview(productName);
 
     const onSubmit: SubmitHandler<ReviewType> = (data) => {
         createReview({ body: data, productName });

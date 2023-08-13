@@ -10,15 +10,7 @@ type ChooseBetweenBtnType = {
 };
 
 const ChooseBetweenBtn: FC<ChooseBetweenBtnType> = (props) => {
-    const {
-        value,
-        values,
-        defaultValue,
-        onChange,
-        className,
-        label,
-        ...restProps
-    } = props;
+    const { values, defaultValue, onChange, className, label } = props;
 
     const [picked, setValue] = useState(defaultValue);
     const handlerPick = (

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
-const PriceRange = () => {
-    const [priceRange, setPriceRange] = useState([0, 100]);
+interface PriceRangeProps {}
+
+const PriceRange: React.FC<PriceRangeProps> = () => {
+    const [priceRange, setPriceRange] = useState<[number, number]>([0, 100]);
     const priceGap = 1000;
 
-    const handlePriceChange = (event) => {
+    const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        let minPrice = parseInt(priceRange[0]);
-        let maxPrice = parseInt(priceRange[1]);
+        let minPrice = parseInt(priceRange[0].toString());
+        let maxPrice = parseInt(priceRange[1].toString());
 
         if (name === "minPrice") {
             minPrice = parseInt(value);
@@ -20,7 +22,7 @@ const PriceRange = () => {
         }
     };
 
-    const handleRangeChange = (event) => {
+    const handleRangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         let minVal = parseInt(event.target.value);
         let maxVal = parseInt(event.target.value) + priceGap;
 

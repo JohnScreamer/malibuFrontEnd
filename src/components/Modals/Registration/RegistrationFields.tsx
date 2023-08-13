@@ -23,7 +23,7 @@ const RegistrationFields: FC<RegistrationFieldsType> = () => {
         //@ts-ignore
         resolver: yupResolver(REGISTRATION_VALIDATION),
     });
-    const { error, isLoading, mutate } = useRegistrationRequest();
+    const { isLoading, mutate } = useRegistrationRequest();
     const onSubmit: SubmitHandler<FieldsType> = (data) => {
         mutate(data);
     };

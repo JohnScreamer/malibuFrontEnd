@@ -1,5 +1,4 @@
 import { CartItem } from "../redux/slice/cart.js";
-import { ProductData } from "./pages/homePage.type.js";
 
 export interface OrderAttributes {
     totalPrice: number;

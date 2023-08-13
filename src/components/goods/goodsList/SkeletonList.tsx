@@ -9,7 +9,7 @@ export const SkeletonList: FC<SkeletonProps> = ({ skeletonsNum }) => {
         <>
             {Array(skeletonsNum)
                 .fill(null)
-                .map((el, i) => {
+                .map((i) => {
                     return <Skeleton height={276} key={i} />;
                 })}
         </>

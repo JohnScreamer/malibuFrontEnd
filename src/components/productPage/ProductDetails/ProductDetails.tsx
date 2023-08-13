@@ -1,9 +1,6 @@
 import { FC, ReactNode } from "react";
 import Skeleton from "react-loading-skeleton";
-import {
-    DescribeType,
-    ProductData,
-} from "../../../types/pages/homePage.type.js";
+import { DescribeType } from "../../../types/pages/homePage.type.js";
 import BonusLabel from "../../common/BonusLabel.js";
 import PriceSection, {
     PriceTag,

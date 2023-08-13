@@ -1,6 +1,5 @@
-import React, { FC, useState, useRef, ReactNode } from "react";
-import { DefaultFilterParamType } from "../../constants/catalog.js";
-import { CatalogSearch } from "../../types/filterCatalog.type.js";
+import { FC } from "react";
+
 import Button from "../uikit/buttons/Button.js";
 import Typography from "../typography/Typography.js";
 import PriceFilter from "./Filters/PriceFilter.js";

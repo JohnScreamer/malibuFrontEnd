@@ -1,4 +1,3 @@
-import { useQueries, useQuery } from "@tanstack/react-query";
 import { FC, ReactNode } from "react";
 import H2 from "../typography/H2.js";
 

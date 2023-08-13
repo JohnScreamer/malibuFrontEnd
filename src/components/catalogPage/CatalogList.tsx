@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { BASE_URL } from "../../constants/global.env.js";
 import { GetAllCatalogResponse } from "../../types/filterCatalog.type.js";
-import { getImageURL } from "../../utils/getImageURL.js";
 import CategoriesCard from "../goods/categorisCard/CategoriesCard.js";
 
 type CatalogListType = {

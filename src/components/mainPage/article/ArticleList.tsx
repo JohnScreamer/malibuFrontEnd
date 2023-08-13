@@ -12,7 +12,7 @@ type ArticleListType = {
 };
 
 const ArticleList: FC<ArticleListType> = (props) => {
-    const { articles, isLoading, listSx, moreLink } = props;
+    const { articles, isLoading } = props;
     return (
         <ListLayout
             listSx=""
@@ -26,7 +26,7 @@ const ArticleList: FC<ArticleListType> = (props) => {
                     <ArticleSkeletonList />
                 </>
             ) : (
-                articles?.map((el, i) => (
+                articles?.map((el) => (
                     <li key={el.id} className="h-full">
                         <ArticleWrapper
                             title={el.attributes.tittle}

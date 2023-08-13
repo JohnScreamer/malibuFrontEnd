@@ -44,7 +44,7 @@ const SearchDropDown: FC<SearchDropDownType> = ({
     });
     const skeletonList = Array(3)
         .fill(null)
-        .map((el, i) => {
+        .map((_, i) => {
             return <Skeleton key={i} className="w-full h-5" />;
         });
     return (

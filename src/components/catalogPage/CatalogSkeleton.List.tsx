@@ -5,7 +5,7 @@ export const CatalogSkeleton = () => {
         <>
             {Array(12)
                 .fill(null)
-                .map((el, i) => {
+                .map((_, i) => {
                     if (i + 1 === 1 || i + 1 === 10) {
                         return (
                             <li className="col-span-2 bg-red-300" key={i}>

@@ -37,7 +37,7 @@ const Select: FC<SelectType> = (props) => {
         setVisibleStatus((prev) => !prev);
     };
     const handlerSetValue = (option: OptionType) => {
-        if (onChange) onChange(option.label);
+        if (onChange) onChange(option.label as any);
 
         handlerCloseSelect();
     };

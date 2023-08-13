@@ -1,8 +1,7 @@
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHooks.js";
+import { useAppSelector } from "../../../hooks/reduxHooks.js";
 import { useCartControl } from "../../../hooks/useCartControl.js";
 import { getProductSelector } from "../../../redux/selectors/index.js";
-import { addToCart, removeFromCart } from "../../../redux/slice/cart.js";
 import { ProductData } from "../../../types/pages/homePage.type.js";
 import GoodsQuantityControlSection from "../../goods/GoodsQuantityControlSection.js";
 import Button from "../../uikit/buttons/Button.js";

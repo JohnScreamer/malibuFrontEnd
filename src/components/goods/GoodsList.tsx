@@ -7,8 +7,7 @@ import { SkeletonList } from "./goodsList/SkeletonList.js";
 
 const GoodsList: FC<GoodsListType> = ({
     isLoading,
-    linkName,
-    linkUrl,
+
     categoriesName,
     listData,
     skeletonNum = 4,

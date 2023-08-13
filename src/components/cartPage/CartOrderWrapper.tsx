@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import CartList from "../goods/CartList.js";
 import AddressFields from "./fields/AddressFields.js";
 import DateFields from "./fields/DateFields.js";
@@ -8,7 +8,6 @@ import OrderSection from "./OrderSection.js";
 import { ORDER_VALIDATION } from "./../../utils/validation/orderValidation.js";
 import UserProfileInfo from "./UserProfileInfo.js";
 import { useCreateOrder } from "../../hooks/fetching_mutation/useCreateOrder.js";
-import { Button } from "@mui/base";
 export type OrderFieldsType = {
     street: string;
     flat: number;
@@ -27,13 +26,12 @@ const CartOrderWrapper: FC<CartOrderWrapperType> = ({ finalStep }) => {
         formState: { errors },
         handleSubmit,
         reset,
-        resetField,
     } = useForm<OrderFieldsType>({
         mode: "onBlur",
         //@ts-ignore
         resolver: yupResolver(ORDER_VALIDATION),
     });
-    const { handlerOrder, isLoading } = useCreateOrder({ reset });
+    const { handlerOrder } = useCreateOrder({ reset });
     const onSubmit: SubmitHandler<OrderFieldsType> = (data) => {
         handlerOrder(data);
     };

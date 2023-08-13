@@ -54,7 +54,7 @@ const Rating: FC<RatingType> = (props) => {
         <div className="flex gap-1 min-h-[24px] items-center">
             {Array(5)
                 .fill(null)
-                .map((el: null, i: number) => {
+                .map((_, i: number) => {
                     if (i + 1 <= currentRating) {
                         return starWrapper(FillStar(big), i);
                     }

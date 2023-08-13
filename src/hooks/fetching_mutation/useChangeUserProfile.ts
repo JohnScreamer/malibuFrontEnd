@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "./../reduxHooks.js";
-import { useMutation, QueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { updateUserinfo } from "../../api/mutation_request.js";
 import { getUserDataSelector } from "../../redux/selectors/index.js";
 import { logIn } from "../../redux/slice/userInfo.js";
@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 export const useChangeUserProfile = () => {
     const userId = useAppSelector(getUserDataSelector);
     const dispatch = useAppDispatch();
-    const { error, isLoading, mutate } = useMutation(
+    const { isLoading, mutate } = useMutation(
         ({ body, id }: { body: any; id: number }) => updateUserinfo(body, id),
         {
             onSuccess: (data) => {

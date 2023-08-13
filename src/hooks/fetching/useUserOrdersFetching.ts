@@ -1,6 +1,6 @@
 import { isUserDataLoadingSelector } from "./../../redux/selectors/index.js";
 import { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getUserOrders } from "../../api/query_request.js";
 import { getUserDataSelector } from "../../redux/selectors/index.js";
 import { useAppSelector } from "../reduxHooks.js";

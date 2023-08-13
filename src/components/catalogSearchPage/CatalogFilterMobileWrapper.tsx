@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { CSSTransition } from "react-transition-group";
 import useClickOutside from "../../hooks/useClickOutside.js";
 type CatalogFilterMobileWrapperType = {

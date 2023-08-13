@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import {
-    getUserDataSelector,
     isUserAuthSelector,
+    getUserDataSelector,
 } from "../redux/selectors/index.js";
 import { useAppSelector } from "./reduxHooks.js";
 import { useControlURLParam } from "./useControlURLParam.js";

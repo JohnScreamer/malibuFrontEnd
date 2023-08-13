@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useUserAuth } from "../../../../../hooks/useUserAuth.js";
-import { getJwtFromCookie } from "../../../../../utils/JWT/getJWTCookie.js";
 import Button from "../../../../uikit/buttons/Button.js";
 import LogInSvg from "./LogInSvg.js";
 import User from "./UserProfile.js";
@@ -9,9 +8,7 @@ import User from "./UserProfile.js";
 type LoginInfoType = { authMeLoading: boolean };
 
 const LoginInfo: FC<LoginInfoType> = ({ authMeLoading }) => {
-    const { handlerCloseLoginModal, handlerOpenLoginModal, isAuth } =
-        useUserAuth();
-    const token = getJwtFromCookie();
+    const { handlerOpenLoginModal, isAuth } = useUserAuth();
     if (authMeLoading) {
         return (
             <div

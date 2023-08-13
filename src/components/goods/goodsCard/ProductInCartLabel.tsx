@@ -1,9 +1,6 @@
 import { FC } from "react";
 import { useAppSelector } from "../../../hooks/reduxHooks.js";
-import {
-    getProductSelector,
-    productInCartSelector,
-} from "../../../redux/selectors/index.js";
+import { getProductSelector } from "../../../redux/selectors/index.js";
 import Typography from "../../typography/Typography.js";
 
 type ProductInCartLabelType = {

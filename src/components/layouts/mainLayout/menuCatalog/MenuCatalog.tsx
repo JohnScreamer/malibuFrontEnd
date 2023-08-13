@@ -17,9 +17,9 @@ type MenuCatalogType = {
     isLoading: boolean;
 };
 
-const MenuCatalog: FC<MenuCatalogType> = ({ data, isLoading }) => {
+const MenuCatalog: FC<MenuCatalogType> = ({ data }) => {
     const isOpen = useAppSelector(isHeaderMenuOpenSelector);
-    const { handlerOpenLoginModal, isAuth } = useUserAuth();
+    const { isAuth } = useUserAuth();
     const dispatch = useDispatch();
 
     const handlerCloseMenu = () => {

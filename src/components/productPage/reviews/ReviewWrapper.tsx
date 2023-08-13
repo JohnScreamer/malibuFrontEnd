@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { IReview } from "../../../types/rating/index.js";
 import { toUKRDateType } from "../../../utils/toUKRDateType.js";
-import { unixTimeToDayMonthYear } from "../../../utils/validDate.js";
 import Typography from "../../typography/Typography.js";
 import Rating from "../../uikit/rating/Rating.js";
 import UserAvatarSvg from "./UserAvatarSvg.js";

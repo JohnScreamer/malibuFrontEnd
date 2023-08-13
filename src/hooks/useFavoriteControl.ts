@@ -21,11 +21,11 @@ export const useFavoriteControl = (product: ProductData) => {
         []
     );
     const dispatch = useAppDispatch();
-    const { error, isLoading, mutate } = useMutation(
+    const { isLoading, mutate } = useMutation(
         ({ body, id }: { body: BodyType; id: number }) =>
             updateUserinfo(body, id),
         {
-            onSuccess: (data) => {
+            onSuccess: () => {
                 dispatch(setFavoriteData(currentFavorite));
             },
             onError: (error) => {

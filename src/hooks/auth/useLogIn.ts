@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
-import { login, registrationRequest } from "../../api/mutation_request.js";
+import { login } from "../../api/mutation_request.js";
 import { logIn } from "../../redux/slice/userInfo.js";
 import { setJwtCookie } from "../../utils/JWT/setJWTCookie.js";
 import { useAppDispatch } from "../reduxHooks.js";

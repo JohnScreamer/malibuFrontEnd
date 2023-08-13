@@ -26,7 +26,6 @@ const Checkbox: FC<CheckboxType> = (props) => {
         className,
         svgSx,
         minusSvg,
-        label,
         name,
     } = props;
     let id = useId();

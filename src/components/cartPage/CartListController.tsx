@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect,  useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks.js";
 import { getAllProductId } from "../../redux/selectors/index.js";
 import { removeMultipleProducts } from "../../redux/slice/cart.js";

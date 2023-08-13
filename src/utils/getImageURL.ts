@@ -1,4 +1,4 @@
-import { ImageDataType, ImagesData } from "./../types/pages/homePage.type.js";
+import { ImageDataType } from "./../types/pages/homePage.type.js";
 export const getImageURL = (el: ImageDataType, revers?: boolean) => {
     if (revers) {
         return (

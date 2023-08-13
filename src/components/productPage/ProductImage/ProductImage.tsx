@@ -27,8 +27,6 @@ const ProductImage: FC<ProductImageType> = ({
         <ImageArr />
     ) : (
         images.map((el, i) => {
-           
-
             if (i > 4) return null;
             if (isLoading) {
                 return;
@@ -94,7 +92,7 @@ export const ImageArr = () => {
         <>
             {Array(5)
                 .fill(null)
-                .map((el, i) => (
+                .map((_, i) => (
                     <Skeleton height={55} key={i} />
                 ))}
         </>

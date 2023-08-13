@@ -12,15 +12,14 @@ type SimilarProductType = {
     productType?: string;
 };
 
-const SimilarProduct: FC<SimilarProductType> = ({ isLoading, productType }) => {
-    const {
-        data,
-        refetch,
-        isSuccess,
-        isLoading: similarLoading,
-    } = useQuery(["similar"], () => getSimilarCatalog(productType || ""), {
-        enabled: false,
-    });
+const SimilarProduct: FC<SimilarProductType> = ({ productType }) => {
+    const { data, refetch, isSuccess } = useQuery(
+        ["similar"],
+        () => getSimilarCatalog(productType || ""),
+        {
+            enabled: false,
+        }
+    );
     useEffect(() => {
         if (productType) {
             refetch();
@@ -33,7 +32,7 @@ const SimilarProduct: FC<SimilarProductType> = ({ isLoading, productType }) => {
                 Схожі
             </Typography>
             <ul className="flex gap-4 flex-col max-lg:flex-row ">
-                {data?.data.map((el, i) => {
+                {data?.data.map((el) => {
                     if (!isSuccess) {
                         return (
                             <li

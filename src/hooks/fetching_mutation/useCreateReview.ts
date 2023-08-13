@@ -14,7 +14,7 @@ export const useCreateReview = (refetchKey: string) => {
         ({ body, productName }: ReviewType) =>
             createProductReview(body, productName),
         {
-            onSuccess: (data) => {
+            onSuccess: () => {
                 queryClient.invalidateQueries([refetchKey]);
                 queryClient.invalidateQueries(["review"]);
             },

@@ -1,4 +1,3 @@
-import { useUserAuth } from "./useUserAuth.js";
 import { useControlURLParam } from "./useControlURLParam.js";
 
 export const useRegistration = () => {

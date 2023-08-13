@@ -1,4 +1,4 @@
-import { Box, Slider, styled } from "@mui/material";
+import { Slider, styled } from "@mui/material";
 import * as React from "react";
 import { debounce } from "../../../utils/debounce.js";
 
@@ -56,6 +56,8 @@ const InputRange: React.FC<InputRangeType> = ({
         newValue: number | number[],
         activeThumb: number
     ) => {
+        if (event) {
+        }
         if (!Array.isArray(newValue)) {
             return;
         }

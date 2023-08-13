@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useAuthMe } from "../../../hooks/auth/useAuthMe.js";
 import ModalsWrapper from "../../Modals/ModalsWrapper.js";
@@ -9,7 +9,7 @@ import MobileMainMenu from "./mobileMainMenu/MobileMainManu.js";
 type MainLayoutType = {};
 
 const MainLayout: FC<MainLayoutType> = () => {
-    const { error, isLoading, getUserData } = useAuthMe();
+    const { isLoading, getUserData } = useAuthMe();
 
     useEffect(() => {
         getUserData();

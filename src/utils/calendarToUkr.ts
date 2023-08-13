@@ -49,7 +49,9 @@ export const calendarToUkr = () => {
         month.innerHTML = montDAta
             .split(" ")
             .map((el) => {
+                //@ts-ignore
                 if (monthObj[el]) {
+                    //@ts-ignore
                     return monthObj[el];
                 }
                 return el;

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useRegistration } from "./../useRegistration.js";
 import { useMutation } from "@tanstack/react-query";
 import { registrationRequest } from "../../api/mutation_request.js";

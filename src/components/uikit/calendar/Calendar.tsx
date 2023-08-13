@@ -2,7 +2,6 @@ import { FC, InputHTMLAttributes, ReactNode, useEffect, useState } from "react";
 import { ukUA } from "@mui/x-date-pickers/locales";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
-import dayjs from "dayjs";
 import "dayjs/locale/uk";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import React from "react";
@@ -48,7 +47,9 @@ const Calendar: FC<CalendarType> = (props) => {
     };
     const handlerSetData = (e: any) => {
         if (onChange) {
-            onChange(`${e["$y"]}-${addNill(e["$M"] + 1)}-${addNill(e["$D"])}`);
+            onChange(
+                `${e["$y"]}-${addNill(e["$M"] + 1)}-${addNill(e["$D"])}` as any
+            );
             closeCalendar();
         }
     };

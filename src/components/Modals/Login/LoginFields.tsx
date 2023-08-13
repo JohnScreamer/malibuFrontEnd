@@ -24,7 +24,7 @@ const LoginFields: FC<LoginFieldsType> = () => {
         //@ts-ignore
         resolver: yupResolver(LOGIN_VALIDATION),
     });
-    const { error, isLoading, mutate } = useLogin();
+    const { isLoading, mutate } = useLogin();
     const onSubmit: SubmitHandler<LoginType> = (data) => mutate(data);
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
