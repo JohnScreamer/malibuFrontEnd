@@ -1,0 +1,35 @@
+<CartCardWrapper
+                    name={
+                        <Link to={""}>
+                            <GoodsName>{"jennie kim zxc"}</GoodsName>
+                        </Link>
+                    }
+                    amountPriceControlSection={
+                        <AmountPriceControl
+                            price={22}
+                            amount={2}
+                            discount={20}
+                        />
+                    }
+                    imageSection={
+                        <CartCardImg imgUrl="https://m.economictimes.com/thumb/msid-99495346,width-1200,height-900,resizemode-4,imgsize-44574/rose-blackpink.jpg" />
+                    }
+                    priceInfo={<CartPriceSection discount={20} price={22} />}
+                    selectControl={
+                        <Checkbox
+                            checked={selectedCard.includes("jennie kim zxc")}
+                            onChange={() => toggelSelectCard("jennie kim zxc")}
+                        />
+                    }
+                />
+
+
+ const [selectedCard, setSelectedCard] = useState<Array<string>>([]);
+    const toggelSelectCard = (name: string) => {
+        setSelectedCard((prev) => {
+            if (prev.includes(name)) {
+                return prev.filter((el) => el !== name);
+            }
+            return [...prev, name];
+        });
+    };

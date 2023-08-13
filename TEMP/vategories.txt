@@ -1,0 +1,67 @@
+div className="grid grid-cols-4 max-md:grid-cols-3 gap-8 max-[425px]:grid-cols-2">
+                    <div className="col-span-2 bg-red-300">
+                        <CategoriesCard
+                            img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                            title="Karina"
+                            link=""
+                            className="h-[200px] max-md:h-[140px]   "
+                        />
+                    </div>
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+
+                    <div className="col-span-2 bg-red-300">
+                        <CategoriesCard
+                            img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                            title="Karina"
+                            link=""
+                            className="h-[200px] max-md:h-[140px]   "
+                        />
+                    </div>
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                    <CategoriesCard
+                        img="https://www.allkpop.com/upload/2023/01/content/221704/1674425045-kr.jpg"
+                        title="Karina"
+                        link=""
+                        className="h-[200px] max-md:h-[140px] "
+                    />
+                </div>

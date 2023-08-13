@@ -1,0 +1,142 @@
+  <div className="grid grid-cols-4 gap-10 max-md:gap-8 max-[425px]:grid-cols-1 max-[425px]:gap-4 max-w-[1200px] mx-auto max-lg:grid-cols-3 max-md:grid-cols-2 w-full">
+                <div className="flex justify-center">
+                    <CardWrapper
+                        addToCart={
+                            <Button
+                                full
+                                className="ui-card-btn  group-hover:ui-btn-primary"
+                                variant="secondary"
+                                filledType="border"
+                            >
+                                В корзину
+                            </Button>
+                        }
+                        imgSection={
+                            <GoodsImageSection
+                                goodsAmount={2}
+                                discountNom={24}
+                                imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                            />
+                        }
+                        goodsName={
+                            <Typography
+                                tag="span"
+                                className="max-[425px]:text-[12px]"
+                                variant="S"
+                            >
+                                Jennie kim
+                            </Typography>
+                        }
+                        priceSection={<PriceSection discount={10} price={90} />}
+                        rating={
+                            <Rating ratingNum={rating} setRating={setRat} />
+                        }
+                    />
+                </div>
+                <div className="flex justify-center">
+                    <CardWrapper
+                        addToCart={
+                            <Button
+                                full
+                                className="ui-card-btn  group-hover:ui-btn-primary"
+                                variant="secondary"
+                                filledType="border"
+                            >
+                                В корзину
+                            </Button>
+                        }
+                        imgSection={
+                            <GoodsImageSection
+                                goodsAmount={10}
+                                imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                            />
+                        }
+                        goodsName={
+                            <Typography
+                                tag="span"
+                                className="max-[425px]:text-[12px]"
+                                variant="S"
+                            >
+                                Jennie kim
+                            </Typography>
+                        }
+                        priceSection={<PriceSection price={90} />}
+                        rating={
+                            <Rating ratingNum={rating} setRating={setRat} />
+                        }
+                    />
+                </div>
+                <div className="flex justify-center">
+                    <CardWrapper
+                        addToCart={
+                            <Button
+                                full
+                                className="ui-card-btn  group-hover:ui-btn-primary"
+                                variant="secondary"
+                                filledType="border"
+                            >
+                                В корзину
+                            </Button>
+                        }
+                        imgSection={
+                            <GoodsImageSection
+                                goodsAmount={10}
+                                imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                            />
+                        }
+                        goodsName={
+                            <Typography
+                                tag="span"
+                                className="max-[425px]:text-[12px]"
+                                variant="S"
+                            >
+                                Jennie kim
+                            </Typography>
+                        }
+                        priceSection={<PriceSection price={90} />}
+                        rating={
+                            <Rating ratingNum={rating} setRating={setRat} />
+                        }
+                    />
+                </div>
+                <div className="flex justify-center">
+                    <CardWrapper
+                        imgSection={
+                            <GoodsImageSection
+                                goodsAmount={10}
+                                imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                            />
+                        }
+                        priceSection={<PriceSection price={90} />}
+                    />
+                </div>
+            </div>
+            <div>
+                <CardWrapper
+                    imgSection={
+                        <GoodsImageSection
+                            goodsAmount={10}
+                            imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                        />
+                    }
+                    priceSection={<PriceSection price={90} />}
+                />
+                <CardWrapper
+                    imgSection={
+                        <GoodsImageSection
+                            goodsAmount={10}
+                            imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-kI1Ig9-FiPVftxWx34AWeP4rjc9drDkmw&usqp=CAU"
+                        />
+                    }
+                    goodsName={
+                        <Typography tag="span" variant="S">
+                            Jennie kim
+                        </Typography>
+                    }
+                    foodType={
+                        <Typography tag="span" variant="XS">
+                            Людина
+                        </Typography>
+                    }
+                />
+            </div>

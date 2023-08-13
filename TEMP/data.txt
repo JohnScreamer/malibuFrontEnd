@@ -1,0 +1,29 @@
+const ingArr = [
+    `https://www.pinkvilla.com/images/2023-06/857551523_week3-37.jpg`,
+    `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR0a5MRMWKKCrjwQP_AZenL-NLDPHmJ9D4Gg&usqp=CAU`,
+    `https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/100bdccd-afd5-4aef-0045-126ae8260b00/width=450/192324.jpeg`,
+    `https://cdn.imweb.me/upload/S2021070193e470af22ec3/40ac01eafa3d9.jpeg`,
+];
+type ProductType = {};
+const simarr = [
+    {
+        link: "",
+        img: "https://www.pinkvilla.com/images/2023-06/857551523_week3-37.jpg",
+        price: 123,
+    },
+    {
+        link: "",
+        img: "https://www.pinkvilla.com/images/2023-06/857551523_week3-37.jpg",
+        price: 123,
+    },
+    {
+        link: "",
+        img: "https://www.pinkvilla.com/images/2023-06/857551523_week3-37.jpg",
+        price: 123,
+    },
+    {
+        link: "",
+        img: "https://www.pinkvilla.com/images/2023-06/857551523_week3-37.jpg",
+        price: 123,
+    },
+];

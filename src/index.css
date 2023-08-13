@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    @font-face {
+        font-family: "fontef283a0703f4243113c3a318978ba09b";
+
+        src: url("https://nomail.com.ua/files/eot/ef283a0703f4243113c3a318978ba09b.eot?#iefix")
+                format("embedded-opentype"),
+            url("https://nomail.com.ua/files/woff/ef283a0703f4243113c3a318978ba09b.woff")
+                format("woff"),
+            url("https://nomail.com.ua/files/woff2/ef283a0703f4243113c3a318978ba09b.woff2")
+                format("woff2");
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:wght@200;300;400;700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap");
+    .defaultFont {
+        font-family: "Rubik", sans-serif;
+    }
+    .center {
+        @apply flex justify-center items-center;
+    }
+    .mxcenter {
+        @apply max-w-[1920px] mx-auto;
+    }
+    .secondFont {
+        font-family: "CeraRoundPro-Regular";
+    }
+
+    .boxShadowGreen {
+        box-shadow: 4px 8px 16px 0px rgba(112, 192, 91, 0.2);
+    }
+    .primaryBoxShadow {
+        box-shadow: 8px 16px 32px 0px rgba(255, 102, 51, 0.2);
+    }
+    .triangleUP {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 4px solid red;
+    }
+    .cardDefaultShadow {
+        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    }
+    .headerShadow {
+        box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .mxCenter {
+        @apply mx-auto  max-w-[1232px] px-[12px];
+    }
+    .footerBg {
+        background-color: #f9f4e2;
+        background-image: url("./assets/bgfooter2.png");
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0.6;
+            transform: scale(0.92, 0.95);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+
+    .fade-animation {
+        animation-name: fade-in;
+        animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+        animation-duration: 0.4s;
+    }
+    .tw-line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .tw-line-clamp-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
+
+body {
+    overflow-y: scroll;
+}
+.MuiPickersDay-root.Mui-selected {
+    border-radius: 50%;
+    transform: scale(111.12%);
+    background-color: #ff6633 !important;
+    color: #fff !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MuiPickersCalendarHeader-label {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+}
+.MuiPickersDay-dayWithMargin {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+}
+.MuiPickersDay-root {
+    font-size: 18px !important;
+    color: #8f8f8f !important;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 5px !important;
+}
+
+.MuiDayCalendar-weekDayLabel {
+    font-size: 18px !important;
+    color: black !important;
+}
+.MuiPickersDay-root.Mui-selected {
+    border-radius: 50%;
+    transform: scale(111.12%);
+    background-color: #ff6633 !important;
+    color: #fff !important;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MuiDayCalendar-weekContainer {
+    display: flex;
+    justify-content: space-between;
+}
+.MuiPickersArrowSwitcher-button {
+    background: #f3f2f1 !important;
+    border-radius: 0 !important;
+    width: 30px;
+    height: 30px;
+}
+.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+    margin-left: 16px !important;
+}
+.no-scroll {
+    height: 100vh;
+    overflow-y: hidden;
+    width: calc(100% - 17px);
+}
+@media (max-width: 768px) {
+    .no-scroll {
+        height: 100vh;
+        overflow-y: hidden;
+        width: 100%;
+    }
+}
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #ff6633;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+@keyframes enterEmtyComponent {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-enter {
+    animation: enterEmtyComponent 800ms ease-in-out;
+}
+.overflow-ellipsis-container {
+    position: relative;
+    max-width: 100%; /* Set the maximum width of the container */
+    overflow: hidden;
+}
+
+.overflow-ellipsis {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
