@@ -3,7 +3,6 @@ import { CSSTransition } from "react-transition-group";
 import useClickOutside from "../../../hooks/useClickOutside.js";
 import Button from "../buttons/Button.js";
 import Modal from "./Portal.js";
-import "./modal.css";
 type ModalWrapperType = {
     isModalOpen: boolean;
     closeModal: () => void;
