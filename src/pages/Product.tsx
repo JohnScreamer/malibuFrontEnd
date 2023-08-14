@@ -4,13 +4,13 @@ import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import DiscountList from "../components/productPage/GoodsList/DiscountList.js";
 import LowPriceList from "../components/productPage/GoodsList/LowPriceList.js";
 import ProductDetails from "../components/productPage/ProductDetails/ProductDetails.js";
-import SimilarProduct from "../components/productPage/ProductDetails/SimilarProduct.js";
+import SimilarProduct from "../components/productPage/ProductDetails/SimilarProduct/SimilarProduct.js";
 import ToCartBtnSection from "../components/productPage/ProductDetails/ToCartBtnSection.js";
 import ProductImage from "../components/productPage/ProductImage/ProductImage.js";
 import ProductName from "../components/productPage/ProductName.js";
 import ProductPageWrapper from "../components/productPage/ProductPageWrapper.js";
 import ProductRatingSection from "../components/productPage/ProductRatingSection/ProductRatingSection.js";
-import ProductReviews from "../components/productPage/ProductReviews.js";
+import ProductReviews from "../components/productPage/reviews/ProductReviews.js";
 import DiscountLabel from "../components/uikit/discountLabel/DiscountLabel.js";
 import { useProductFetching } from "../hooks/useProductFetching.js";
 

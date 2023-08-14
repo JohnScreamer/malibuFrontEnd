@@ -2,8 +2,8 @@ import { FC, useState } from "react";
 import { DefaultFilterParamType } from "../../constants/catalog.js";
 import { FiltersWrapperType } from "../../types/pages/catalogSearch.type.js";
 import CatalogFilters from "./CatalogFilters.js";
-import FilterToDefaultBtn from "./FilterToDefaultBtn.js";
 import OpenFilterBtn from "./OpenFilterBtn.js";
+import FilterToDefaultBtn from "./ToDefault/FilterToDefaultBtn.js";
 const FiltersWrapper: FC<FiltersWrapperType> = ({
     children,
     refetch,
@@ -15,6 +15,16 @@ const FiltersWrapper: FC<FiltersWrapperType> = ({
 }) => {
     const [currentSearchParam, setCurrentSearchParam] =
         useState<DefaultFilterParamType>(searchParam);
+
+    const toDefault = (
+        <FilterToDefaultBtn
+            searchParam={searchParam}
+            setCurrentSearchParam={setCurrentSearchParam}
+            setSearchParam={setSearchParam}
+            handlerToDefaultParam={handlerToDefaultParam}
+            isLoading={isLoading}
+        />
+    );
 
     return (
         <>
@@ -29,25 +39,11 @@ const FiltersWrapper: FC<FiltersWrapperType> = ({
                         setCurrentSearchParam={setCurrentSearchParam}
                         refetch={refetch}
                     >
-                        <FilterToDefaultBtn
-                            searchParam={searchParam}
-                            setCurrentSearchParam={setCurrentSearchParam}
-                            setSearchParam={setSearchParam}
-                            handlerToDefaultParam={handlerToDefaultParam}
-                            isLoading={isLoading}
-                        />
+                        {toDefault}
                     </CatalogFilters>
                 </div>
                 <div className="col-span-9 flex flex-col gap-10 max-md:gap-8 max-[425px]:gap-4 ">
-                    <div className="max-md:hidden">
-                        <FilterToDefaultBtn
-                            searchParam={searchParam}
-                            setCurrentSearchParam={setCurrentSearchParam}
-                            setSearchParam={setSearchParam}
-                            handlerToDefaultParam={handlerToDefaultParam}
-                            isLoading={isLoading}
-                        />
-                    </div>
+                    <div className="max-md:hidden">{toDefault}</div>
                     <div className="w-full">{children}</div>
                     <div className="center">{pagination}</div>
                 </div>

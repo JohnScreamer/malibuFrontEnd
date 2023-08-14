@@ -25,15 +25,15 @@ const Home: FC<HomeType> = () => {
                 }
             >
                 <GoodsList
-                    categoriesName={homeData?.bottom_list.name}
-                    isLoading={isLoading}
-                    listData={homeData?.bottom_list.products.data}
-                    listSx="grid-cols-4"
-                />
-                <GoodsList
                     categoriesName={homeData?.top_list.name}
                     isLoading={isLoading}
                     listData={homeData?.top_list.products.data}
+                    listSx="grid-cols-4"
+                />
+                <GoodsList
+                    categoriesName={homeData?.bottom_list.name}
+                    isLoading={isLoading}
+                    listData={homeData?.bottom_list.products.data}
                     listSx="grid-cols-4"
                 />
                 <GoodsList
@@ -42,6 +42,7 @@ const Home: FC<HomeType> = () => {
                     listData={homeData?.middle_list.products.data}
                     listSx="grid-cols-4"
                 />
+
                 <ArticleList
                     articles={data?.data.attributes.articles.data}
                     isLoading={isLoading}

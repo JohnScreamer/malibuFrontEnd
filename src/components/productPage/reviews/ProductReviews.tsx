@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { FC, useEffect } from "react";
-import Skeleton from "react-loading-skeleton";
-import { getProductReviews } from "../../api/query_request.js";
-import ReviewsList from "./reviews/ReviewsList.js";
-import ReviewWrapper from "./reviews/ReviewWrapper.js";
-import WriteNewReviewsWrapper from "./reviews/WriteNewReviewsWrapper.js";
+import { getProductReviews } from "../../../api/query_request.js";
+import ProductReviewListSkeleton from "./ProductReviewListSkeleton.js";
+import ReviewsList from "./ReviewList/ReviewsList.js";
+import ReviewWrapper from "./ReviewWrapper.js";
+import WriteNewReviewsWrapper from "./WriteNewReview/WriteNewReviewsWrapper.js";
 
 type ProductReviewsType = {
     name?: string;
@@ -12,7 +12,7 @@ type ProductReviewsType = {
 };
 
 const ProductReviews: FC<ProductReviewsType> = ({ name, isProductLoading }) => {
-    if (!name) return <ReviewSkeleton />;
+    if (!name) return <ProductReviewListSkeleton />;
     const { data, isLoading, refetch } = useQuery({
         queryFn: () => getProductReviews(name),
         queryKey: ["review"],
@@ -47,16 +47,3 @@ const ProductReviews: FC<ProductReviewsType> = ({ name, isProductLoading }) => {
 };
 
 export default ProductReviews;
-
-export const ReviewSkeleton = () => {
-    return (
-        <div>
-            <Skeleton className="w-full max-sm:h-28 h-48" />
-            {Array(3)
-                .fill(null)
-                .map((_, i) => (
-                    <Skeleton key={i} className="w-full h-28 max-sm:h-20" />
-                ))}
-        </div>
-    );
-};

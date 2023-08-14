@@ -50,7 +50,7 @@ const UserProfileInfo: FC<UserProfileInfoType> = () => {
                 </table>
             ) : (
                 <div className="inline">
-                    <Button onClick={handlerOpenLoginModal}>Війти</Button>
+                    <Button onClick={handlerOpenLoginModal}>Увійти</Button>
                 </div>
             )}
         </div>

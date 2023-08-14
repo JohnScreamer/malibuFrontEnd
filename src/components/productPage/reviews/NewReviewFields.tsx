@@ -1,50 +1,18 @@
-import { FC } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import Typography from "../../typography/Typography.js";
-import Button from "../../uikit/buttons/Button.js";
 import Field from "../../uikit/field/Field.js";
+import { FC } from "react";
+import { Control, Controller, FieldErrors } from "react-hook-form";
+import Typography from "../../typography/Typography.js";
 import Rating from "../../uikit/rating/Rating.js";
 import Tooltips from "../../uikit/tooltips/Tooltips.js";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { REVIEW_VALIDATION } from "./../../../utils/validation/reviewValidation.js";
-import Skeleton from "react-loading-skeleton";
-import { useCreateReview } from "../../../hooks/fetching_mutation/useCreateReview.js";
-import Spinner from "../../uikit/spinner/Spinner.js";
-type ReviewType = {
-    comment: string;
-    score: number;
+import { ReviewType } from "./WriteNewReview/WriteNewReviewsWrapper.js";
+type NewReviewFieldsType = {
+    control: Control<ReviewType, any>;
+    errors: FieldErrors<ReviewType>;
 };
 
-type WriteNewReviewsWrapperType = {
-    isLoading: boolean;
-    productName: string;
-};
-
-const WriteNewReviewsWrapper: FC<WriteNewReviewsWrapperType> = ({
-    isLoading,
-    productName,
-}) => {
-    const {
-        control,
-        handleSubmit,
-        formState: { errors, isValid },
-    } = useForm<ReviewType>({
-        mode: "onBlur",
-        values: { score: 0, comment: "" },
-        //@ts-ignore
-        resolver: yupResolver(REVIEW_VALIDATION),
-    });
-    const { isLoading: createLoading, createReview } =
-        useCreateReview(productName);
-
-    const onSubmit: SubmitHandler<ReviewType> = (data) => {
-        createReview({ body: data, productName });
-    };
-    if (isLoading) {
-        return <Skeleton className="w-full max-sm:h-28 h-48" />;
-    }
+const NewReviewFields: FC<NewReviewFieldsType> = ({ control, errors }) => {
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <>
             <div className="flex items-center gap-4">
                 <Typography bold variant="S" tag="span">
                     Ваша оцінка
@@ -105,12 +73,8 @@ const WriteNewReviewsWrapper: FC<WriteNewReviewsWrapperType> = ({
                     )}
                 />
             </div>
-            <div>
-                <Button disabled={!isValid}>Відправити відгук</Button>
-            </div>
-            {createLoading && <Spinner />}
-        </form>
+        </>
     );
 };
 
-export default WriteNewReviewsWrapper;
+export default NewReviewFields;

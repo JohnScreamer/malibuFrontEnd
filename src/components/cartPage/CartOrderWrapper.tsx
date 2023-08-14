@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import CartList from "../goods/CartList.js";
 import AddressFields from "./fields/AddressFields.js";
 import DateFields from "./fields/DateFields.js";
-import OrderSection from "./OrderSection.js";
+import OrderSection from "./OrderSectionInfo/OrderSection.js";
 import { ORDER_VALIDATION } from "./../../utils/validation/orderValidation.js";
 import UserProfileInfo from "./UserProfileInfo.js";
 import { useCreateOrder } from "../../hooks/fetching_mutation/useCreateOrder.js";
@@ -23,7 +23,7 @@ type CartOrderWrapperType = {
 const CartOrderWrapper: FC<CartOrderWrapperType> = ({ finalStep }) => {
     const {
         control,
-        formState: { errors },
+        formState: { errors, isValid },
         handleSubmit,
         reset,
     } = useForm<OrderFieldsType>({
@@ -61,6 +61,7 @@ const CartOrderWrapper: FC<CartOrderWrapperType> = ({ finalStep }) => {
                 <OrderSection
                     isFinalStep={!!finalStep}
                     submitForm={submitForm}
+                    isValid={isValid}
                 />
             </div>
         </>
