@@ -1,83 +1,32 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
-import {
-    FOOTER_LINKS,
-    FOOTE_SOCIAL_NETWORK_LINK,
-} from "../../../../constants/footer.js";
-import Typography from "../../../typography/Typography.js";
+import { useGetFooterData } from "../../../../hooks/fetching/useGetFooterData.js";
+import FooterLayout from "./FooterLayout.js";
+import FooterLogo from "./FooterLogo.js";
+import FooterNavList from "./Lists/FooterNavList.js";
+import SocialNetwork from "./Lists/SocialNetwork.js";
+import Telephone from "./Telephone.js";
 
 type FooterType = {};
 
 const Footer: FC<FooterType> = () => {
+    const { data, isLoading } = useGetFooterData();
+
     return (
-        <footer className="  footerBg">
-            <div className="mxCenter py-6 pb-8 grid gap-1 grid-flow-col  max-[425px]:grid-rows-2  ">
-                <Link to={"/"} className="mr-10 self-center items-center  ">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="32"
-                        viewBox="0 0 127 103"
-                        fill="none"
-                    >
-                        <path
-                            d="M113.09 54.4805H13.7718C11.689 54.4805 9.996 56.2457 10.1774 58.3197C12.3542 83.013 35.3648 102.444 63.4277 102.444C91.4906 102.444 114.501 83.013 116.678 58.3197C116.866 56.2457 115.173 54.4805 113.09 54.4805Z"
-                            fill="#FF6633"
-                        />
-                        <path
-                            d="M45.5036 17.5315C44.3951 17.5315 43.2933 17.0349 42.5744 16.0818C38.9464 11.3163 32.0533 8.34959 24.5892 8.34959C17.125 8.34959 10.2319 11.3096 6.6039 16.0818C5.37442 17.6993 3.06328 18.0081 1.45086 16.7798C-0.168285 15.5515 -0.477334 13.2426 0.75214 11.6317C5.81784 4.97348 14.7265 1 24.5892 1C34.4518 1 43.3605 4.97348 48.4329 11.6317C49.6624 13.2493 49.3466 15.5515 47.7342 16.7798C47.0623 17.2899 46.283 17.5315 45.5036 17.5315Z"
-                            fill="#414141"
-                        />
-                        <path
-                            d="M123.183 17.5315C122.075 17.5315 120.973 17.0349 120.254 16.0818C116.626 11.3163 109.733 8.34959 102.269 8.34959C94.8047 8.34959 87.9115 11.3096 84.2836 16.0818C83.0541 17.6993 80.743 18.0081 79.1305 16.7798C77.5114 15.5515 77.2024 13.2426 78.4318 11.6317C83.4975 4.97348 92.4062 1 102.269 1C112.132 1 121.04 4.97348 126.113 11.6317C127.342 13.2493 127.026 15.5515 125.414 16.7798C124.742 17.2899 123.963 17.5315 123.183 17.5315Z"
-                            fill="#414141"
-                        />
-                    </svg>
-                </Link>
-                <ul className="flex gap-x-10 max-md:gap-x-6 mr-auto flex-wrap   max-[425px]:col-span-2  max-[425px]:mt-6">
-                    {FOOTER_LINKS.map((el) => {
-                        return (
-                            <li key={el.title} className="text-[12px]">
-                                <Link to={el.url}>{el.title}</Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <div className="flex gap-x-10  max-md:gap-x-6  max-sm:flex-col max-sm:items-center   max-sm:gap-2 ">
-                    <ul className="flex items-center max-md:gap-2 flex-wrap max-md:grid grid-cols-2 max-sm:flex   gap-4">
-                        {FOOTE_SOCIAL_NETWORK_LINK.map((el, i) => {
-                            return (
-                                <li key={i}>
-                                    <Link to={el.url}>{el.svg}</Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                    <a
-                        href="tel:+380985554433"
-                        className="flex items-center gap-2"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="25"
-                            height="24"
-                            viewBox="0 0 25 24"
-                            fill="none"
-                        >
-                            <path
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                                d="M1.03055 5.62795C0.79859 3.78205 2.37862 2.5 4.07554 2.5H7.6672C8.39213 2.5 9.01333 3.01844 9.14301 3.73167L9.74935 7.06653C9.93046 8.06268 9.67133 9.08845 9.03884 9.87906L8.31545 10.7833C8.18654 10.9444 8.17475 11.1581 8.27434 11.3205C8.7439 12.0862 9.58857 13.3797 10.3553 14.1464C11.1221 14.9132 12.4156 15.7579 13.1813 16.2274C13.3437 16.327 13.5573 16.3152 13.7185 16.1863L14.6227 15.4629C15.4133 14.8304 16.4391 14.5713 17.4352 14.7524L20.7701 15.3588C21.4833 15.4885 22.0018 16.1096 22.0018 16.8346V20.1816C22.0018 22.0032 20.5508 23.624 18.6171 23.313C15.3045 22.7803 10.5694 21.0768 6.63538 16.8402C2.81033 12.7209 1.39331 8.51475 1.03055 5.62795ZM4.07554 3.5C2.81103 3.5 1.88547 4.41084 2.02275 5.50326C2.36104 8.19537 3.69444 12.2034 7.36818 16.1598C11.1177 20.1977 15.6307 21.8199 18.7758 22.3257C19.9703 22.5178 21.0018 21.5285 21.0018 20.1816V16.8346C21.0018 16.5929 20.829 16.3859 20.5912 16.3426L17.2564 15.7363C16.5448 15.6069 15.8121 15.792 15.2474 16.2438L14.3432 16.9672C13.8653 17.3495 13.1937 17.4081 12.6585 17.0799C11.8953 16.6119 10.508 15.7133 9.64823 14.8536C8.78849 13.9938 7.8899 12.6064 7.42187 11.8433C7.09367 11.3081 7.15231 10.6364 7.53458 10.1586L8.25797 9.25437C8.70975 8.68964 8.89485 7.95695 8.76548 7.24541L8.15914 3.91056C8.11591 3.67281 7.90885 3.5 7.6672 3.5H4.07554Z"
-                                fill="#414141"
-                            />
-                        </svg>
-                        <Typography tag="span" variant="S">
-                            +380985554433
-                        </Typography>
-                    </a>
-                </div>
-            </div>
-        </footer>
+        <FooterLayout
+            navLinks={<FooterNavList />}
+            socialLinks={
+                <SocialNetwork
+                    data={data?.data?.attributes?.social_links?.data}
+                />
+            }
+            logo={<FooterLogo />}
+            phone={
+                <Telephone
+                    isLoading={isLoading}
+                    phone={data?.data.attributes.phone}
+                />
+            }
+        />
     );
 };
 

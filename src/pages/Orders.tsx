@@ -3,13 +3,10 @@ import { Navigate } from "react-router-dom";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import OrderList from "../components/orderPage/OrderLists/OrderList.js";
 import OrderSkeleton from "../components/orderPage/OrderSkeleton.js";
+import { ORDERS_CRUMBS } from "../constants/breadCrumbsArr.js";
 import { useUserOrderFetching } from "../hooks/fetching/useUserOrdersFetching.js";
 import { getJwtFromCookie } from "../utils/JWT/getJWTCookie.js";
 
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Замовлення", link: "" },
-];
 type OrdersType = {};
 
 const Orders: FC<OrdersType> = () => {
@@ -19,7 +16,7 @@ const Orders: FC<OrdersType> = () => {
         return <Navigate to={"/"} />;
     }
     return (
-        <PageLayout breadCrumbsArr={arr} title={"Замовлення"}>
+        <PageLayout breadCrumbsArr={ORDERS_CRUMBS} title={"Замовлення"}>
             {isLoading || isUserLoading ? (
                 <OrderSkeleton />
             ) : (

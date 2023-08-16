@@ -1,14 +1,19 @@
 import { FC } from "react";
 import Skeleton from "react-loading-skeleton";
+import { Link } from "react-router-dom";
 
 type BannerType = {
     img: string;
     isLoading: boolean;
+    url?: string;
 };
 
-const Banner: FC<BannerType> = ({ img, isLoading }) => {
+const Banner: FC<BannerType> = ({ img, isLoading, url }) => {
     return (
-        <div className="w-full h-[200px] max-md:h-[160px] max-[420px]:h-[80px]">
+        <Link
+            to={url || "/"}
+            className="w-full block h-[200px] max-md:h-[160px] max-[420px]:h-[80px]"
+        >
             {isLoading ? (
                 <Skeleton className="h-[200px] max-md:h-[160px] max-[420px]:h-[80px]" />
             ) : (
@@ -18,7 +23,7 @@ const Banner: FC<BannerType> = ({ img, isLoading }) => {
                     className="object-cover  h-full w-full"
                 />
             )}
-        </div>
+        </Link>
     );
 };
 

@@ -13,6 +13,7 @@ type PageLayoutType = {
     isLoading?: boolean;
     lastName?: string;
     className?: string;
+    secondClassName?: string;
 };
 
 const PageLayout: FC<PageLayoutType> = ({
@@ -25,8 +26,12 @@ const PageLayout: FC<PageLayoutType> = ({
     className,
 }) => {
     return (
-        <main className={`flex-grow h-full w-full ${className}`}>
-            <div className="mxCenter max-md:py-[19px] py-[27px] pb-20 max-md:pb-[60px] max-sm:pb-10 max-sm:py-[14px]">
+        <main
+            className={`flex-grow h-full w-full overflow-hidden ${className}`}
+        >
+            <div
+                className={`mxCenter max-md:py-[19px] py-[27px] pb-20 max-md:pb-[60px] max-sm:pb-10 max-sm:py-[14px] `}
+            >
                 <div className="flex flex-col gap-[27px] max-md:gap-[19px] max-sm:gap-[14px] ">
                     <BreadCrumbs
                         crumbsArr={breadCrumbsArr}
@@ -35,9 +40,9 @@ const PageLayout: FC<PageLayoutType> = ({
                     />
                     {!!title && (
                         <div
-                            className={`${
-                                !!countLabel && "flex items-center"
-                            } mb-[60px] max-md:mb-[40px] max-sm:mb-[32px]`}
+                            className={`${!!countLabel && "flex items-center"} 
+                                     mb-[60px] max-md:mb-[40px] max-sm:mb-[32px]
+                            `}
                         >
                             <MainTitle>{title}</MainTitle>
                             {countLabel}

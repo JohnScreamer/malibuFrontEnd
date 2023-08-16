@@ -3,10 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import Typography from "../components/typography/Typography.js";
 import Button from "../components/uikit/buttons/Button.js";
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Помилка", link: "" },
-];
+import { ERROR_CRUMBS } from "../constants/breadCrumbsArr.js";
+
 type ErrorPageType = {};
 
 const ErrorPage: FC<ErrorPageType> = () => {
@@ -20,7 +18,7 @@ const ErrorPage: FC<ErrorPageType> = () => {
 
     return (
         <PageLayout
-            breadCrumbsArr={arr}
+            breadCrumbsArr={ERROR_CRUMBS}
             title="404: Ой, це нелегко! Сторінку десь загубили."
             className="bg-mainBg min-h-screen"
         >

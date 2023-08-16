@@ -3,16 +3,14 @@ import { FC } from "react";
 import { getArticles } from "../api/query_request.js";
 import ArticlesWrapper from "../components/articlePage/articles/ArticlesWrapper.js";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
+import { ARTICLES_CRUMBS } from "../constants/breadCrumbsArr.js";
 
 type ArticlesType = {};
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Статті", link: "/article" },
-];
+
 const Articles: FC<ArticlesType> = () => {
     const { data, isLoading } = useQuery(["articles"], getArticles);
     return (
-        <PageLayout title="Статті" breadCrumbsArr={arr}>
+        <PageLayout title="Статті" breadCrumbsArr={ARTICLES_CRUMBS}>
             <ArticlesWrapper isLoading={isLoading} data={data} />
         </PageLayout>
     );

@@ -3,13 +3,11 @@ import { Navigate } from "react-router-dom";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import ProfilePageWrapper from "../components/profilePage/ProfilePageWrapper.js";
 import Spinner from "../components/uikit/spinner/Spinner.js";
+import { PROFILE_CRUMBS } from "../constants/breadCrumbsArr.js";
 import { useAppSelector } from "../hooks/reduxHooks.js";
 import { isUserDataLoadingSelector } from "../redux/selectors/index.js";
 import { getJwtFromCookie } from "../utils/JWT/getJWTCookie.js";
-const crumbs = [
-    { name: "Головна", link: "/" },
-    { name: "Профіль", link: "/profile" },
-];
+
 type ProfileType = {};
 
 const Profile: FC<ProfileType> = () => {
@@ -19,7 +17,7 @@ const Profile: FC<ProfileType> = () => {
         return <Navigate to={"/"} />;
     }
     return (
-        <PageLayout breadCrumbsArr={crumbs} title="Профайл">
+        <PageLayout breadCrumbsArr={PROFILE_CRUMBS} title="Профайл">
             {userLoadingStatus ? <Spinner /> : <ProfilePageWrapper />}
         </PageLayout>
     );

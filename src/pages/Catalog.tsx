@@ -3,10 +3,8 @@ import { FC } from "react";
 import { getAllCatalog } from "../api/query_request.js";
 import CatalogWrapper from "../components/catalogPage/CatalogWrapper.js";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Каталог", link: "/catalog" },
-];
+import { CATALOG_CRUMBS } from "../constants/breadCrumbsArr.js";
+
 type CatalogType = {};
 
 const Catalog: FC<CatalogType> = () => {
@@ -14,7 +12,7 @@ const Catalog: FC<CatalogType> = () => {
 
     return (
         <>
-            <PageLayout breadCrumbsArr={arr} title="Каталог">
+            <PageLayout breadCrumbsArr={CATALOG_CRUMBS} title="Каталог">
                 <CatalogWrapper data={data} isLoading={isLoading} />
             </PageLayout>
         </>

@@ -1,23 +1,20 @@
 import { FC, ReactNode } from "react";
+import { SEARCH_CRUMBS } from "../../constants/breadCrumbsArr.js";
 import PageLayout from "../layouts/DefaultPageLayout/PageLayout.js";
-import H2 from "../typography/H2.js";
 import Typography from "../typography/Typography.js";
 
 type SearchPageWrapperType = {
     children: ReactNode;
     searchStr: string;
 };
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Результат пошуку", link: "" },
-];
+
 const SearchPageWrapper: FC<SearchPageWrapperType> = ({
     children,
     searchStr,
 }) => {
     return (
         <>
-            <PageLayout breadCrumbsArr={arr} title="Результат пошук">
+            <PageLayout breadCrumbsArr={SEARCH_CRUMBS} title="Результат пошук">
                 <div className="mb-[40px] max-md:mb-[24px] max-[425px]:mb-[16px] ">
                     <Typography
                         variant="L"

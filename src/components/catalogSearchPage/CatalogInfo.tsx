@@ -1,15 +1,13 @@
 import { FC, memo } from "react";
 import Skeleton from "react-loading-skeleton";
+import { CATALOG_SEARCH_CRUMBS } from "../../constants/breadCrumbsArr.js";
 import { useFetchingCatalogTypeName } from "../../hooks/fetching/useFetchingCatalogTypeName.js";
 
 import Typography from "../typography/Typography.js";
 import BreadCrumbs from "../uikit/breadCrumbs/BreadCrumbs.js";
 
 type CatalogInfoType = {};
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Каталог", link: "/catalog/" },
-];
+
 const CatalogInfo: FC<CatalogInfoType> = () => {
     const { productType, productTypeLoading } = useFetchingCatalogTypeName();
 
@@ -17,7 +15,7 @@ const CatalogInfo: FC<CatalogInfoType> = () => {
         <>
             <div>
                 <BreadCrumbs
-                    crumbsArr={arr}
+                    crumbsArr={CATALOG_SEARCH_CRUMBS}
                     isLoading={productTypeLoading || !productType}
                     lastName={productType}
                 />

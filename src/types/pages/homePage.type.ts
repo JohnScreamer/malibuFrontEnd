@@ -1,3 +1,5 @@
+import { OffersType } from "../offers.type.js";
+
 export type DescribeType = {
     [key: string]: string | number | string[] | null;
 } | null;
@@ -131,6 +133,7 @@ interface HomeData {
         middle_list: TopListData;
         bottom_list: BottomListData;
         articles: Articles;
+        special_offers: OffersType;
     };
 }
 

@@ -3,11 +3,9 @@ import ArticleSkeleton from "../components/articlePage/ArticleSkeleton.js";
 import ArticleWrapper from "../components/articlePage/ArticleWrapper.js";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
 import Empty from "../components/uikit/empty/Empty.js";
+import { ARTICLE_CRUMBS } from "../constants/breadCrumbsArr.js";
 import { useFetchingArticle } from "../hooks/fetching/useFetchingArticle.js";
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Статті", link: "/article" },
-];
+
 type ArticleType = {};
 
 const Article: FC<ArticleType> = () => {
@@ -16,7 +14,7 @@ const Article: FC<ArticleType> = () => {
     if (isLoading) {
         return (
             <PageLayout
-                breadCrumbsArr={arr}
+                breadCrumbsArr={ARTICLE_CRUMBS}
                 title={data?.data.attributes.tittle}
                 isLoading={isLoading}
             >
@@ -27,7 +25,7 @@ const Article: FC<ArticleType> = () => {
 
     return (
         <PageLayout
-            breadCrumbsArr={arr}
+            breadCrumbsArr={ARTICLE_CRUMBS}
             title={data?.data.attributes.tittle}
             isLoading={isLoading}
             lastName={data?.data.attributes.tittle}

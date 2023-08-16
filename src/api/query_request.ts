@@ -11,6 +11,7 @@ import { ProductRatingResponse, ReviewBody } from "../types/rating/index.js";
 import { getJwtFromCookie } from "../utils/JWT/getJWTCookie.js";
 import { OrderResponse } from "../types/orders.type.js";
 import { ArticleResponse, ArticlesResponse } from "../types/article.type.js";
+import { FooterData } from "../types/footer.type.js";
 instance.interceptors.request.use(
     (config) => {
         const token = getJwtFromCookie();
@@ -105,5 +106,11 @@ export const getArticle = (id: number): Promise<ArticleResponse> => {
 export const getArticles = (): Promise<ArticlesResponse> => {
     return instance
         .get(`/api/articles?populate=deep,2`)
+        .then((data) => data.data);
+};
+
+export const getFooter = (): Promise<FooterData> => {
+    return instance
+        .get("/api/footers/1?populate=deep,2")
         .then((data) => data.data);
 };

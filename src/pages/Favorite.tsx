@@ -2,16 +2,14 @@ import { FC } from "react";
 import { Navigate } from "react-router-dom";
 import GoodsList from "../components/goods/GoodsList.js";
 import PageLayout from "../components/layouts/DefaultPageLayout/PageLayout.js";
+import { FAVORITE_CRUMBS } from "../constants/breadCrumbsArr.js";
 import { useAppSelector } from "../hooks/reduxHooks.js";
 import {
     getUserFavoriteSelector,
     isUserDataLoadingSelector,
 } from "../redux/selectors/index.js";
 import { getJwtFromCookie } from "../utils/JWT/getJWTCookie.js";
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Обране", link: "" },
-];
+
 type FavoriteType = {};
 
 const Favorite: FC<FavoriteType> = () => {
@@ -24,7 +22,7 @@ const Favorite: FC<FavoriteType> = () => {
 
     return (
         <>
-            <PageLayout breadCrumbsArr={arr} title="Обране">
+            <PageLayout breadCrumbsArr={FAVORITE_CRUMBS} title="Обране">
                 <GoodsList
                     isLoading={isUserDataLoading}
                     listData={favoriteData}

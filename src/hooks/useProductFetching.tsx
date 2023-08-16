@@ -2,10 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProduct } from "../api/query_request.js";
-const arr = [
-    { name: "Головна", link: "/" },
-    { name: "Каталог", link: "/catalog/" },
-];
+import { PRODUCT_CRUMBS } from "../constants/breadCrumbsArr.js";
+
 export const useProductFetching = () => {
     let { id } = useParams() as { id: string };
     const { data, error, isLoading, refetch } = useQuery(
@@ -23,7 +21,7 @@ export const useProductFetching = () => {
     }, [id]);
 
     const crumbs = [
-        ...arr,
+        ...PRODUCT_CRUMBS,
         {
             link:
                 "/catalog/" +
