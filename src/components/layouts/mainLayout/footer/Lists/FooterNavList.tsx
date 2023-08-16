@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FOOTER_LINKS } from "../../../../../constants/footer.js";
 
 type FooterNavListType = {};
@@ -11,7 +11,14 @@ const FooterNavList: FC<FooterNavListType> = () => {
                 {FOOTER_LINKS.map((el) => {
                     return (
                         <li key={el.title} className="text-[12px]">
-                            <Link to={el.url}>{el.title}</Link>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    `${isActive ? "text-orange" : ""}`
+                                }
+                                to={el.url}
+                            >
+                                {el.title}
+                            </NavLink>
                         </li>
                     );
                 })}

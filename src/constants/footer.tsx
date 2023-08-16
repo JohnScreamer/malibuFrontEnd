@@ -1,9 +1,8 @@
 export const FOOTER_LINKS = [
-    { title: "Про компіню", url: "" },
-    { title: "Контакти", url: "" },
-    { title: "Вакансії", url: "" },
-    { title: "Статї", url: "" },
-    { title: "Політика обробки персональних данних", url: "" },
+    { title: "Про компіню", url: "/aboutUs" },
+    { title: "Контакти", url: "/contacts" },
+    { title: "Вакансії", url: "/vacancies" },
+    { title: "Статї", url: "/article" },
 ];
 
 export const FOOTE_SOCIAL_NETWORK_LINK = [
