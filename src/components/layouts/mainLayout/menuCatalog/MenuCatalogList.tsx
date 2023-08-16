@@ -20,7 +20,7 @@ const MenuCatalogList: FC<MenuCatalogListType> = ({ data, isLoading }) => {
             <ul className="   grid grid-cols-4 w-full max-md:grid-cols-2 max-[425px]:grid-cols-1  mxCenter max-sm:px-5    gap-6 max-sm:gap-4">
                 {Array(10)
                     .fill(null)
-                    ?.map((_, i) => (
+                    ?.map((_) => (
                         <Skeleton className="font-bold max-sm:font-normal" />
                     ))}
             </ul>

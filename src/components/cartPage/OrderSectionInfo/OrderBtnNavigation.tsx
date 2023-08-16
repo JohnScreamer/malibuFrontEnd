@@ -2,7 +2,6 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../../hooks/reduxHooks.js";
 import { isUserAuthSelector } from "../../../redux/selectors/index.js";
-import { submitForm } from "../../../utils/submitForm.js";
 import Button from "../../uikit/buttons/Button.js";
 
 type OrderBtnNavigationType = {

@@ -15,7 +15,7 @@ const SocialNetwork: FC<SocialNetworkType> = ({ data, isLoading }) => {
             <ul className="flex items-center max-md:gap-2 flex-wrap max-md:grid grid-cols-2 max-sm:flex   gap-4">
                 {Array(4)
                     .fill(null)
-                    .map((el, i) => {
+                    .map((_, i) => {
                         return (
                             <li key={i} className="p-[2px]">
                                 <Skeleton className="w-[20px] h-[20px] " />

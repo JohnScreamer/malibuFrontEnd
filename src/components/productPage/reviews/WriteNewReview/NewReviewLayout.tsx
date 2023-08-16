@@ -1,7 +1,6 @@
 import { FC, ReactNode } from "react";
 import { SubmitHandler } from "react-hook-form";
 import Skeleton from "react-loading-skeleton";
-import Typography from "../../../typography/Typography.js";
 import Button from "../../../uikit/buttons/Button.js";
 import Spinner from "../../../uikit/spinner/Spinner.js";
 import { ReviewType } from "./WriteNewReviewsWrapper.js";

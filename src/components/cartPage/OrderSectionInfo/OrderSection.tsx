@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useAppSelector } from "../../../hooks/reduxHooks.js";
 import { getTotalPriceSelector } from "../../../redux/selectors/index.js";
-import OrderBtnNavigation from "./OrderBtnNAvigation.js";
+import OrderBtnNavigation from "./OrderBtnNavigation.js";
 import OrderTableInformation from "./OrderTableInformation.js";
 
 type OrderSectionType = {

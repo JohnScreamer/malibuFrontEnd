@@ -11,12 +11,11 @@ const FilterToDefaultBtn: FC<FilterToDefaultBtnType> = ({
     setCurrentSearchParam,
     isLoading,
 }) => {
-    const { handlerAllToDefault, handlerToDefault, toDefaultBtnList } =
-        useToDefaultFilters({
-            handlerToDefaultParam,
-            searchParam,
-            setCurrentSearchParam,
-        });
+    const { handlerAllToDefault, toDefaultBtnList } = useToDefaultFilters({
+        handlerToDefaultParam,
+        searchParam,
+        setCurrentSearchParam,
+    });
     if (isLoading) {
         return <Skeleton className="w-1/2 h-10" />;
     }
