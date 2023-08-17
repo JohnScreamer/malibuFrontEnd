@@ -50,3 +50,7 @@ export const CONTACTS_CRUMBS = [
     { name: "Головна", link: "/" },
     { name: "Контакти", link: "" },
 ];
+export const VACANCIES_CRUMBS = [
+    { name: "Головна", link: "/" },
+    { name: "Вакансії", link: "" },
+];

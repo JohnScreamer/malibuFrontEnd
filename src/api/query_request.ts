@@ -13,6 +13,7 @@ import { OrderResponse } from "../types/orders.type.js";
 import { ArticleResponse, ArticlesResponse } from "../types/article.type.js";
 import { FooterData } from "../types/footer.type.js";
 import { ContactPageResponse } from "../types/pages/contactPage.type.js";
+import { VacanciesResponse } from "../types/pages/vacancies.type.js";
 instance.interceptors.request.use(
     (config) => {
         const token = getJwtFromCookie();
@@ -118,4 +119,7 @@ export const getFooter = (): Promise<FooterData> => {
     return instance
         .get("/api/footers/1?populate=deep,2")
         .then((data) => data.data);
+};
+export const getVacancies = (): Promise<VacanciesResponse> => {
+    return instance.get("/api/vacancies").then((data) => data.data);
 };

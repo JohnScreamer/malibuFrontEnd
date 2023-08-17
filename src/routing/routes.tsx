@@ -14,6 +14,7 @@ import Orders from "../pages/Orders.js";
 import Product from "../pages/Product.js";
 import Profile from "../pages/Profile.js";
 import Search from "../pages/Search.js";
+import Vacancies from "../pages/Vacancies.js";
 import { PrivateRoute } from "./PrivateRoute.js";
 
 export const router = createBrowserRouter([
@@ -29,6 +30,8 @@ export const router = createBrowserRouter([
             { path: "/search", element: <Search /> },
             { path: "/contacts", element: <Contacts /> },
             { path: "/aboutUs", element: <AboutUs /> },
+            { path: "/vacancies", element: <Vacancies /> },
+
             {
                 path: "/favorite",
                 element: (

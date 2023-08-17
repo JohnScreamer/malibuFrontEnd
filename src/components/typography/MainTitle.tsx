@@ -9,7 +9,7 @@ type MainTitleType = {
 const MainTitle: FC<MainTitleType> = ({ children, className }) => {
     return (
         <Typography
-            className={` max-[425px]:text-[26px] leading-normal ${className}`}
+            className={` max-md:text-5xl max-[425px]:text-4xl leading-normal ${className}`}
             bold
             tag="bigTitle"
             variant="XL"

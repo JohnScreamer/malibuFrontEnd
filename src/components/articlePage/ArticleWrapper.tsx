@@ -17,7 +17,7 @@ const ArticleWrapper: FC<ArticleWrapperType> = ({ img, text, subTitle }) => {
                         variant="S"
                         tag="title"
                         bold
-                        className="max-md:text-2xl text-myGrey-mid"
+                        className="max-md:text-base text-myGrey-mid"
                     >
                         {subTitle}
                     </Typography>
@@ -30,7 +30,7 @@ const ArticleWrapper: FC<ArticleWrapperType> = ({ img, text, subTitle }) => {
                     />
                 </div>
             </div>
-            <Typography tag="text" variant="M" className="max-md:text-base">
+            <Typography tag="text" variant="M" className="max-md:text-sm">
                 {text}
             </Typography>
         </article>
