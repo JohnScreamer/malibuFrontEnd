@@ -12,6 +12,7 @@ import { getJwtFromCookie } from "../utils/JWT/getJWTCookie.js";
 import { OrderResponse } from "../types/orders.type.js";
 import { ArticleResponse, ArticlesResponse } from "../types/article.type.js";
 import { FooterData } from "../types/footer.type.js";
+import { ContactPageResponse } from "../types/pages/contactPage.type.js";
 instance.interceptors.request.use(
     (config) => {
         const token = getJwtFromCookie();
@@ -109,6 +110,10 @@ export const getArticles = (): Promise<ArticlesResponse> => {
         .then((data) => data.data);
 };
 
+export const getContactPage = async (): Promise<ContactPageResponse> => {
+    const data = await instance.get(`/api/contact-pages/1`);
+    return data.data;
+};
 export const getFooter = (): Promise<FooterData> => {
     return instance
         .get("/api/footers/1?populate=deep,2")

@@ -11,6 +11,7 @@ const Cart: FC<CartType> = () => {
         <>
             <PageLayout
                 breadCrumbsArr={CART_CRUMBS}
+                smallDistance
                 title="Корзина"
                 countLabel={<ItemsInCart />}
             >

@@ -10,7 +10,11 @@ type ArticlesType = {};
 const Articles: FC<ArticlesType> = () => {
     const { data, isLoading } = useQuery(["articles"], getArticles);
     return (
-        <PageLayout title="Статті" breadCrumbsArr={ARTICLES_CRUMBS}>
+        <PageLayout
+            title="Статті"
+            breadCrumbsArr={ARTICLES_CRUMBS}
+            smallDistance
+        >
             <ArticlesWrapper isLoading={isLoading} data={data} />
         </PageLayout>
     );

@@ -46,3 +46,7 @@ export const ABOUT_US_CRUMBS = [
     { name: "Головна", link: "/" },
     { name: "Про нас", link: "" },
 ];
+export const CONTACTS_CRUMBS = [
+    { name: "Головна", link: "/" },
+    { name: "Контакти", link: "" },
+];

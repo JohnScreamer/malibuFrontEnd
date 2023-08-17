@@ -6,8 +6,8 @@ type OfferSkeletonListType = {};
 const OfferSkeletonList: FC<OfferSkeletonListType> = () => {
     return (
         <>
-            <Skeleton className="w-full h-[175px]" />
-            <Skeleton className="w-full h-[175px]" />
+            <Skeleton className=" h-[175px]" />
+            <Skeleton className=" h-[175px]" />
         </>
     );
 };

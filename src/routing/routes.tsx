@@ -6,6 +6,7 @@ import Articles from "../pages/Articles.js";
 import Cart from "../pages/Cart.js";
 import Catalog from "../pages/Catalog.js";
 import CatalogSearch from "../pages/CatalogSearch.js";
+import Contacts from "../pages/Contacts.js";
 import ErrorPage from "../pages/Error.js";
 import Favorite from "../pages/Favorite.js";
 import Home from "../pages/Main.js";
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
             { path: "/cart", element: <Cart /> },
             { path: "/catalog/:id", element: <CatalogSearch /> },
             { path: "/search", element: <Search /> },
+            { path: "/contacts", element: <Contacts /> },
             { path: "/aboutUs", element: <AboutUs /> },
             {
                 path: "/favorite",

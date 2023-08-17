@@ -20,7 +20,7 @@ const OfferList: FC<OfferListType> = ({ data, isLoading }) => {
             >
                 Спеціальні пропозиції
             </Typography>
-            <ul className="flex  gap-10 max-md:gap-8 max-sm:gap-4 max-md:flex-col">
+            <ul className="grid grid-cols-2  gap-10 max-md:gap-8 max-sm:gap-4 max-md:grid-cols-1">
                 {isLoading || !data ? (
                     <OfferSkeletonList />
                 ) : (

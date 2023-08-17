@@ -7,7 +7,7 @@ import ArticleList from "../components/mainPage/article/ArticleList.js";
 import Banner from "../components/mainPage/banner/Banner.js";
 import { BASE_URL } from "../constants/global.env.js";
 import OfferList from "../components/mainPage/offers/OfferList.js";
-import MapWrapper from "../components/mainPage/map/MapWrapper.js";
+import MapWrapper from "../components/common/map/MapWrapper.js";
 
 type HomeType = {};
 
