@@ -19,6 +19,7 @@ const LoginFields: FC<LoginFieldsType> = () => {
         control,
         handleSubmit,
         formState: { errors, isValid },
+        clearErrors,
     } = useForm<LoginType>({
         mode: "onBlur",
         //@ts-ignore

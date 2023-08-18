@@ -23,7 +23,7 @@ const ProductPageWrapper: FC<ProductPageWrapperType> = ({
     name,
 }) => {
     return (
-        <div>
+        <div className="flex flex-col gap-[120px] max-lg:gap-[100px] max-md:gap-[80px] ">
             <div>
                 <div className="flex flex-col max-sm:gap-2 gap-4 mb-4 max-sm:mb-2">
                     {name}

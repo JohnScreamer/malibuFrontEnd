@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 type SideType = "t" | "b" | "r" | "l";
 type VariantType = "error" | "info";
 export type TooltipsType = {
@@ -31,10 +31,21 @@ const toolTipPosition = {
 };
 
 const Tooltips: FC<TooltipsType> = (props) => {
+    const [isHidden, setHidden] = useState(false);
     const { withSvg, className, variant, children, arrowSide } = props;
+    const handlerHideTooltip = () => {
+        setHidden(true);
+    };
+    useEffect(() => {
+        setHidden(false);
+    }, [children]);
+    if (isHidden) {
+        return null;
+    }
     return (
         <div
-            className={`flex rounded  items-center text-white ${toolTipPosition[arrowSide]}  w-full max-w-[250px]   gap-2 p-2 absolute z-10 bg-${variantStyle[variant]} ${className}`}
+            onMouseEnter={handlerHideTooltip}
+            className={`inline-flex  rounded  items-center text-white ${toolTipPosition[arrowSide]} max-[425px]:max-w-[275px]     gap-2 p-2 absolute z-10 bg-${variantStyle[variant]} ${className}`}
         >
             {withSvg && (
                 <svg
@@ -78,7 +89,7 @@ const Tooltips: FC<TooltipsType> = (props) => {
                 ${arrowSideStyle[arrowSide]}  `}
             ></div>
             <div
-                className={`mx-2 break-all   max-md:text-xs max-lg:text-sm ${
+                className={`  max-md:text-xs max-lg:text-sm ${
                     variant === "error" ? "" : "text-black"
                 }      `}
             >

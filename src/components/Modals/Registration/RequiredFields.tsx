@@ -85,6 +85,7 @@ const RequiredFields: FC<RequiredFieldsType> = ({ control, errors }) => {
                         rules={{ required: true }}
                         render={({ field }) => (
                             <Calendar
+                                disabledFuture
                                 tooltip={
                                     errors.birthDay && (
                                         <Tooltips

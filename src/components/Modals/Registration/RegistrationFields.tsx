@@ -4,7 +4,7 @@ import Typography from "../../typography/Typography.js";
 import Button from "../../uikit/buttons/Button.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { REGISTRATION_VALIDATION } from "../../../utils/validation/yup.js";
-import { FieldsType, useDATA } from "../../../types/registrationFileds.js";
+import { FieldsType } from "../../../types/registrationFileds.js";
 import RequiredFields from "./RequiredFields.js";
 import NotRequiredFields from "./NotRequiredFields.js";
 import { useRegistrationRequest } from "../../../hooks/auth/useRegistrationRequest.js";
@@ -18,7 +18,6 @@ const RegistrationFields: FC<RegistrationFieldsType> = () => {
         handleSubmit,
         formState: { errors, isValid },
     } = useForm<FieldsType>({
-        values: useDATA,
         mode: "onBlur",
         //@ts-ignore
         resolver: yupResolver(REGISTRATION_VALIDATION),

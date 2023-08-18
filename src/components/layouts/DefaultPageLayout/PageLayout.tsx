@@ -46,7 +46,9 @@ const PageLayout: FC<PageLayoutType> = ({
                     />
                     {!!title && (
                         <div
-                            className={`${!!countLabel && "flex items-center"} 
+                            className={`${
+                                !!countLabel && "flex items-center"
+                            } gap-5
                                   ${
                                       smallDistance
                                           ? "mb-[40px] max-md:mb-[32px]"
